@@ -1,24 +1,37 @@
 import React from 'react'
 import ResourceItem from './ResourceItem'
-
+import ResourcesNavbar from './ResourcesTab'
+import {data} from '../resourceData'
 class ResourcesPage extends React.Component {
 
   constructor(){
     super(); //must call parents constructor first 
     this.state = {
-            
+      data : data,
+      activeResourceIndex : 0,
+      allResources : data.allResources ,
+      medicine : data.medicine ,
+      beds : data.beds,
+      plasama : data.plasma
     }
     
   }
 
   // componentDidMount(){
-  //   this.setState{
+    
+  
 
-  //   }
+    
   // }
+
+  
 
 
   render(){
+
+    const { allResources , medicine , plasama , beds , activeResourceIndex} = this.state;
+    const listArr = [allResources , medicine , beds , plasama ];
+    const list = listArr[activeResourceIndex];
 
     
 
@@ -28,12 +41,28 @@ class ResourcesPage extends React.Component {
     
         <header>
           <div className='tabs'>
-
+            <ResourcesNavbar/>
           </div>
         </header>
           
-             
-      <ResourceItem/>
+      <div>
+        {
+         
+          list.map((item)=>{
+            return <ResourceItem
+                    title = {item.title}
+                    description = {item.description}
+                    link = {item.link}
+                    key = {item.id}
+                    date = {item.date}
+                    upvotes = {item.upvotes}
+                    downvotes = {item.downvotes}
+                    
+                  />
+          })
+        }
+        </div> 
+      
       </div>
     </div>
     );
