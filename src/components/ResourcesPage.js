@@ -12,24 +12,24 @@ class ResourcesPage extends React.Component {
       allResources : data.allResources ,
       medicine : data.medicine ,
       beds : data.beds,
-      plasama : data.plasma
+      plasama : data.plasma,
+      categories : data.categories
     }
     
   }
 
-  // componentDidMount(){
-    
-  
-
-    
-  // }
+  changeResourceCatgory = (categoryIndex)=>{
+    this.setState({
+      activeResourceIndex : categoryIndex
+    })
+  }
 
   
 
 
   render(){
 
-    const { allResources , medicine , plasama , beds , activeResourceIndex} = this.state;
+    const { allResources , medicine , plasama , beds , activeResourceIndex , categories } = this.state;
     const listArr = [allResources , medicine , beds , plasama ];
     const list = listArr[activeResourceIndex];
 
@@ -41,7 +41,11 @@ class ResourcesPage extends React.Component {
     
         <header>
           <div className='tabs'>
-            <ResourcesNavbar/>
+            <ResourcesNavbar
+               activeResourceIndex = {activeResourceIndex} 
+                categories = {categories}  
+                changeResourceCatgory = {this.changeResourceCatgory}
+            />
           </div>
         </header>
           

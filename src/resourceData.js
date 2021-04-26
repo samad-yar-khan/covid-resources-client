@@ -1,6 +1,6 @@
 export const data = {
     categories : [
-        "All" , "Medicine" , "Beds" , "Plasma"
+        "ALL" , "MEDICINES" , "BEDS" , "PLASMA"
     ],
     allResources : [
         {
