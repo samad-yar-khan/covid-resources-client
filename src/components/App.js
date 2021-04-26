@@ -27,10 +27,10 @@ class App extends React.Component {
                   tabName : "Volunteer" , 
                   tabLink :'volunteer'
                 }, 
-                {
-                  tabName : "About Us" , 
-                  tabLink :'about'
-                },
+                // {
+                //   tabName : "About Us" , 
+                //   tabLink :'about'
+                // },
                ],
         activeTabIndex : 0,
         loading : true,

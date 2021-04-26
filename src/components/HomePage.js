@@ -18,8 +18,7 @@ class HomePage extends React.Component {
 
   render(){
 
-    
-
+  
 
     return (
       <div>
@@ -29,6 +28,7 @@ class HomePage extends React.Component {
             
                 <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">HOME</h2>
                 <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+            
             
         </div>
       </div>
