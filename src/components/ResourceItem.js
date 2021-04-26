@@ -13,7 +13,7 @@ class ResourceItem extends React.Component {
 
 
     return (
-      <div class='p-2'>
+      <div class='p-2 bg-gray-50 mb-2'>
     
         <div class='header text-lg font-bold'>
             {title}
