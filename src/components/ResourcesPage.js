@@ -1,30 +1,72 @@
 import React from 'react'
-
-
+import ResourceItem from './ResourceItem'
+import ResourcesNavbar from './ResourcesTab'
+import {data} from '../resourceData'
 class ResourcesPage extends React.Component {
 
   constructor(){
     super(); //must call parents constructor first 
     this.state = {
-            
+      data : data,
+      activeResourceIndex : 0,
+      allResources : data.allResources ,
+      medicine : data.medicine ,
+      beds : data.beds,
+      plasama : data.plasma,
+      categories : data.categories
     }
     
   }
 
+  changeResourceCatgory = (categoryIndex)=>{
+    this.setState({
+      activeResourceIndex : categoryIndex
+    })
+  }
+
+  
+
 
   render(){
 
+    const { allResources , medicine , plasama , beds , activeResourceIndex , categories } = this.state;
+    const listArr = [allResources , medicine , beds , plasama ];
+    const list = listArr[activeResourceIndex];
+    
     
 
     return (
       <div>
-      <div class="flex flex-col items-center container px-5  mx-auto bg-gray-100 h-40 ">
+      <div className="flex flex-col  container px-5  mx-auto bg-white  ">
     
-    
+        <header>
+          <div className='tabs'>
+            <ResourcesNavbar
+               activeResourceIndex = {activeResourceIndex} 
+                categories = {categories}  
+                changeResourceCatgory = {this.changeResourceCatgory}
+            />
+          </div>
+        </header>
           
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Resources</h2>
-              <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
-          
+      <div>
+        {
+         
+          list.map((item)=>{
+            return <ResourceItem
+                    title = {item.title}
+                    description = {item.description}
+                    link = {item.link}
+                    key = {item.id}
+                    date = {item.date}
+                    upvotes = {item.upvotes}
+                    downvotes = {item.downvotes}
+                    
+                  />
+          })
+        }
+        </div> 
+      
       </div>
     </div>
     );

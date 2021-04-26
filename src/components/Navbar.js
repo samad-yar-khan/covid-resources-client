@@ -1,6 +1,6 @@
 import React from 'react'
 import NavButton from './NavButton'
-import EnactusLogo from '../assets/images/enactus.jpg'
+import EnactusLogo from '../assets/images/ashray.png'
 import { Link } from 'react-router-dom'
 
 
@@ -10,19 +10,19 @@ function Navbar(props){
     const {tabs , activeTabIndex , changeTab } = props;
     
         return (
-        <header className="text-gray-600 body-font">
-             <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
+        <header className="text-gray-600 body-font mt-2 mb-2 ">
+             <div className="container mx-auto flex  p-1 flex-row items-center">
                
-                <img src={EnactusLogo} alt="Enactus NSUT" fill="none" stroke="currentColor" stroke-ss="round" stroke-linejoin="round" stroke-width="2" className="w-32 h-32 text-white p-1 " />
+                <img src={EnactusLogo} alt="Enactus NSUT" fill="none" stroke="currentColor" stroke-ss="round" strokeLinejoin="round" strokeWidth="2" className="sm:w-20 sm:h-20 w-10 h-10 text-white p-1 bg-blue-600 rounded" />
                     
                
                 {/* <span className="ml-3 text-xl">Tailblocks</span> */}
                 
-                <nav className="md:ml-auto flex flex-wrap justify-items-end text-base justify-end cursor-pointer">
+                <nav className="ml-auto flex justify-items-end text-base justify-end items-end cursor-pointer">
                     {
                         tabs.map((tab , index) => {
                             
-                                return <Link to ={tab.tabLink}>
+                                return <Link to ={tab.tabLink} key={index}>
                                     <NavButton 
                                     tabName = {tab.tabName}
                                     key ={index}
@@ -35,7 +35,7 @@ function Navbar(props){
               
                 </nav>
                 {/* <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
                 </button> */}
