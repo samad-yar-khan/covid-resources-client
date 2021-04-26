@@ -1,10 +1,10 @@
 export const data = {
     categories : [
-        "ALL" , "MEDICINES" , "BEDS" , "PLASMA"
+        "All" , "Medicines" , "Beds" , "Plasma"
     ],
     allResources : [
         {
-            title:'Oxygen Availabe',
+            title:'Oxygen Available',
             description :'Oxygen Avilable in delhi confirmed on 26th',
             categories : ['oxygen' , 'medicine'],
             date : '25/04/21',

@@ -25,7 +25,7 @@ function ResourceNavbar(props){
                 </a> */}
                 {
                     props.categories.map((item , index)=>{
-                        return (<a onClick={()=>{props.changeResourceCatgory(index)}} className= {`cursor-pointer sm:px-6  py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none  tracking-wider ${index === props.activeResourceIndex ? 'text-blue-600 border-blue-600 bg-gray-100 rounded-t' : ' hover:text-gray-900 border-gray-200'} `}>
+                        return (<a onClick={()=>{props.changeResourceCatgory(index)}} key={index} className= {`cursor-pointer sm:px-6  py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none  tracking-wider ${index === props.activeResourceIndex ? 'text-blue-600 border-blue-600 bg-gray-100 rounded-t' : ' hover:text-gray-900 border-gray-200'} `}>
                                  {item}
                                 </a>)
                     })
