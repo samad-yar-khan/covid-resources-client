@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-class About extends React.Component {
+class AboutPage extends React.Component {
 
   constructor(){
     super(); //must call parents constructor first 
@@ -41,4 +41,4 @@ class About extends React.Component {
 //   );
 // }
 
-export default About;
+export default AboutPage;

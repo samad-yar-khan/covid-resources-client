@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-class Volunteer extends React.Component {
+class VolunteerPage extends React.Component {
 
   constructor(){
      super(); //must call parents constructor first 
@@ -36,4 +36,4 @@ class Volunteer extends React.Component {
 //   );
 // }
 
-export default Volunteer;
+export default VolunteerPage;
