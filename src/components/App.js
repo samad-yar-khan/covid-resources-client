@@ -14,7 +14,24 @@ class App extends React.Component {
     this.state = {
         
         resources : [],
-        tabs : ["Home" , "Resources" , "Volunteer" , "About Us"],
+        tabs : [
+                {
+                  tabName : "Home" , 
+                  tabLink :'home'
+                }, 
+                {
+                  tabName : "Resources" , 
+                  tabLink :'resources'
+                }, 
+                {
+                  tabName : "Volunteer" , 
+                  tabLink :'volunteer'
+                }, 
+                {
+                  tabName : "About Us" , 
+                  tabLink :'about'
+                },
+               ],
         activeTabIndex : 0,
         loading : true,
         
@@ -23,6 +40,12 @@ class App extends React.Component {
 
     //method 2 , we bind our functions to this (otherwise their 'this' value wull be uundefined when they are assigned to an event listenr or aany other var)
     // this.increaseQuantity = this.increaseQuantity.bind(this)}
+  }
+
+  changeTab = (Tabindex) => {
+    this.setState({
+      activeTabIndex:Tabindex
+    })
   }
 
 
@@ -37,11 +60,13 @@ class App extends React.Component {
         <Navbar 
           activeTabIndex = {this.state.activeTabIndex}
           tabs = {this.state.tabs}
+          changeTab = {this.changeTab}
         />
         <Switch>
           <Route path ='/' exact component={HomePage}/>
+          <Route path ='/home' exact component={HomePage}/>
           <Route path ='/about' exact component={AboutPage}/>
-          <Route path ='/voluteer' exact component={VolunteerPage}/>
+          <Route path ='/volunteer' exact component={VolunteerPage}/>
           <Route path ='/resources' exact component={ResourcesPage}/>
         </Switch>
         </div>

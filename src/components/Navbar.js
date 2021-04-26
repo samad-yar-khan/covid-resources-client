@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 function Navbar(props){
 
-    const {tabs , activeTabIndex} = props;
+    const {tabs , activeTabIndex , changeTab } = props;
     
         return (
         <header className="text-gray-600 body-font">
@@ -20,13 +20,16 @@ function Navbar(props){
                 
                 <nav className="md:ml-auto flex flex-wrap justify-items-end text-base justify-end cursor-pointer">
                     {
-                        tabs.map((tabName , index) => {
-                            return <NavButton 
-                                tabName = {tabName}
-                                key ={index}
-                                index = {index}
-                                activeTabIndex  = {activeTabIndex}
-                            />
+                        tabs.map((tab , index) => {
+                            
+                                return <Link to ={tab.tabLink}>
+                                    <NavButton 
+                                    tabName = {tab.tabName}
+                                    key ={index}
+                                    index = {index}
+                                    activeTabIndex  = {activeTabIndex}
+                                    changeTab = {changeTab}
+                                /></Link>
                         })
                     }
               
