@@ -1,5 +1,4 @@
 import React from 'react'
-import NavButton from './NavButton'
 
 
 function ResourceNavbar(props){

@@ -36,10 +36,7 @@ class App extends React.Component {
         loading : true,
         
     }
-     //we put this in the constrcutor because it will be used again and again to aceess the firestore
-
-    //method 2 , we bind our functions to this (otherwise their 'this' value wull be uundefined when they are assigned to an event listenr or aany other var)
-    // this.increaseQuantity = this.increaseQuantity.bind(this)}
+    
   }
 
   changeTab = (Tabindex) => {
@@ -61,9 +58,10 @@ class App extends React.Component {
           activeTabIndex = {this.state.activeTabIndex}
           tabs = {this.state.tabs}
           changeTab = {this.changeTab}
+          setCurrentTab = {this.state.activeTabIndex}
         />
         <Switch>
-          <Route path ='/' exact component={HomePage}/>
+          <Route path ='/' exact component={HomePage} />
           <Route path ='/home' exact component={HomePage}/>
           <Route path ='/about' exact component={AboutPage}/>
           <Route path ='/volunteer' exact component={VolunteerPage}/>

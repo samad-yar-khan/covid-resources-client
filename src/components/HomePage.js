@@ -4,21 +4,21 @@ import React from 'react'
 
 class HomePage extends React.Component {
 
-  constructor(){
-    super(); //must call parents constructor first 
-    this.state = {
+  // constructor(){
+  //   super(); //must call parents constructor first 
+  //   this.state = {
       
-    }
-     //we put this in the constrcutor because it will be used again and again to aceess the firestore
+  //   }
+  //    //we put this in the constrcutor because it will be used again and again to aceess the firestore
 
-    //method 2 , we bind our functions to this (otherwise their 'this' value wull be uundefined when they are assigned to an event listenr or aany other var)
-    // this.increaseQuantity = this.increaseQuantity.bind(this)}
-  }
+  //   //method 2 , we bind our functions to this (otherwise their 'this' value wull be uundefined when they are assigned to an event listenr or aany other var)
+  //   // this.increaseQuantity = this.increaseQuantity.bind(this)}
+  // }
 
 
   render(){
 
-  
+ 
 
     return (
       <div>
@@ -29,7 +29,7 @@ class HomePage extends React.Component {
                 <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">HOME</h2>
                 <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
             
-            
+
         </div>
       </div>
     );

@@ -32,7 +32,7 @@ class ResourcesPage extends React.Component {
     const { allResources , medicine , plasama , beds , activeResourceIndex , categories } = this.state;
     const listArr = [allResources , medicine , beds , plasama ];
     const list = listArr[activeResourceIndex];
-
+    
     
 
     return (
