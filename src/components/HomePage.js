@@ -22,10 +22,15 @@ class HomePage extends React.Component {
 
 
     return (
-      <div className="App">
-        
-        Home
-    
+      <div>
+        <div class="flex flex-col items-center container px-5  mx-auto bg-gray-100 h-40 ">
+      
+      
+            
+                <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">HOME</h2>
+                <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+            
+        </div>
       </div>
     );
   }

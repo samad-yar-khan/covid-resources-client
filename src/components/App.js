@@ -70,6 +70,7 @@ class App extends React.Component {
           <Route path ='/resources' exact component={ResourcesPage}/>
         </Switch>
         </div>
+      
       </Router>
     );
   }
