@@ -1,6 +1,5 @@
 import React from "react";
 import TagInput from "./TagInput";
-import AashrayLogo from "../assets/images/aashray.png";
 import homeimage from "../assets/images/homepage.png";
 import oneLogo from "../assets/images/1.svg";
 import twoLogo from "../assets/images/2.svg";
