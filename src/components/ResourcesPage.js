@@ -37,7 +37,7 @@ class ResourcesPage extends React.Component {
 
     return (
       <div>
-      <div className="flex flex-col  container px-5  mx-auto bg-white  ">
+      <div className="flex flex-col  container px-2  mx-auto bg-white  ">
     
         <header>
           <div className='tabs'>

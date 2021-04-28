@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TagInput from "./TagInput";
-import AashrayLogo from "../assets/images/aashray.png";
 import homeimage from "../assets/images/homepage.png";
 
 function HomePage() {
@@ -16,6 +15,7 @@ function HomePage() {
     "Remdesivir",
     "Favipiravir",
   ];
+
 
   return (
     <div>
@@ -154,6 +154,7 @@ function HomePage() {
               </h2>
               <p class="leading-relaxed text-xl">
                 Make sure search results are sorted by ‘Latest’.
+
               </p>
             </div>
           </div>
