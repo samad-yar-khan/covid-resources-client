@@ -14,7 +14,7 @@ export default function TagInput() {
         }}
         class="w-full mx-auto flex justify-center flex-col items-center"
       >
-          <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left my-5">
+          <div class="relative mr-4 lg:w-full xl:w-1/2 w-4/5 md:w-full text-left my-5">
             <label for="hero-field" class="leading-7 text-lg text-gray-600">
               Others
             </label>
@@ -29,9 +29,12 @@ export default function TagInput() {
             />
           </div>
       </form>
-      <div>
+      <div className="relative mr-4 lg:w-full xl:w-1/2 w-4/5 md:w-full text-left my-1 flex w-full flex-wrap justify-around">
         {tags.map((tag) => (
-          <div>{tag}</div>
+          <div
+            className="mt-2 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none rounded text-lg mx-2 cursor-pointer"
+            onClick={() => setTags(t => t.filter(tag_ => tag_ !== tag))}
+            >{tag}</div>
         ))}
       </div>
     </>
