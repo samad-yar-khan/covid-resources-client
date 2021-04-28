@@ -23,10 +23,10 @@ class App extends React.Component {
                   tabName : "Resources" , 
                   tabLink :'resources'
                 }, 
-                // {
-                //   tabName : "Volunteer" , 
-                //   tabLink :'volunteer'
-                // }, 
+                {
+                  tabName : "Volunteer" , 
+                  tabLink :'volunteer'
+                }, 
                 // {
                 //   tabName : "About Us" , 
                 //   tabLink :'about'
