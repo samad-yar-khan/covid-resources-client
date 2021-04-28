@@ -9,7 +9,7 @@ class ResourceItem extends React.Component {
 
   render(){
 
-    const {title , description , date , link, upvotes , downvotes } = this.props;
+    const {title , description , date , link, upvotes , downvotes , verified } = this.props;
 
 
     return (
@@ -25,6 +25,9 @@ class ResourceItem extends React.Component {
         <div className ='description text-md '>
             {description}
         </div>
+        <p className={`${verified?'text-green-500':'text-red-500'}`}>
+          {verified?'Verified':'Unverified'}
+        </p>
         <div>
             <a href={`${link}`} >Link</a>
             
@@ -41,7 +44,6 @@ class ResourceItem extends React.Component {
             <div className="absolute top-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-red-500 rounded-full text-xs">{downvotes}</div>
             </button>
             </div>
-
         </div>
     
     );

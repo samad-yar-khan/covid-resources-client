@@ -61,7 +61,7 @@ class ResourcesPage extends React.Component {
                     date = {item.date}
                     upvotes = {item.upvotes}
                     downvotes = {item.downvotes}
-                    
+                    verified = {item.verified}
                   />
           })
         }

@@ -10,7 +10,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'0'
+            id:'0',
+            verified : true
     
         },
         {
@@ -20,7 +21,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id : '1'
+            id : '1',
+            verified : false
             
         },
         {
@@ -30,7 +32,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'2'
+            id:'2',
+            verified : true
         },
         {
             title:'Beds Availabe',
@@ -39,7 +42,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'3'
+            id:'3',
+            verified : true
         },
         {
             title:'BEds Availabe',
@@ -48,7 +52,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'4'
+            id:'4',
+            verified : false
         },
         {
             title:'Medicine Availabe',
@@ -57,7 +62,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'5'
+            id:'5',
+            verified : true
         },
         {
             title:'Plasma Availabe',
@@ -66,7 +72,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'6'
+            id:'6',
+            verified : true
         },
         {
             title:'plasma Availabe',
@@ -75,7 +82,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'7'
+            id:'7',
+            verified : false
         },
         {
             title:'Medicine Availabe',
@@ -84,7 +92,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'8'
+            id:'8',
+            verified:true
         },
     
     ],
@@ -96,7 +105,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'5'
+            id:'5',
+            verified:true
         },
         {
             title:'Medicine Availabe',
@@ -105,7 +115,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'8'
+            id:'8',
+            verified:false
         },
     ],
     beds : [
@@ -116,7 +127,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'3'
+            id:'3',
+            verified:true
         },
         {
             title:'BEds Availabe',
@@ -125,7 +137,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'4'
+            id:'4',
+            verified:false
         },
     ],
     plasma : [
@@ -136,7 +149,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'6'
+            id:'6',
+            verified:true
         },
         {
             title:'plasma Availabe',
@@ -145,7 +159,8 @@ export const data = {
             date : '25/04/21',
             upvotes : '14',
             downvotes : '3',
-            id:'7'
+            id:'7',
+            verified:false
         }
     ]
 
