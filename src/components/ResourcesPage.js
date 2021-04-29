@@ -13,6 +13,7 @@ class ResourcesPage extends React.Component {
       medicine : data.medicine ,
       beds : data.beds,
       plasama : data.plasma,
+      oxygen :data.oxygen,
       categories : data.categories
     }
     
@@ -29,8 +30,8 @@ class ResourcesPage extends React.Component {
 
   render(){
 
-    const { allResources , medicine , plasama , beds , activeResourceIndex , categories } = this.state;
-    const listArr = [allResources , medicine , beds , plasama ];
+    const { allResources , medicine , plasama , beds , activeResourceIndex , categories , oxygen} = this.state;
+    const listArr = [allResources , medicine , beds , plasama , oxygen];
     const list = listArr[activeResourceIndex];
     
     

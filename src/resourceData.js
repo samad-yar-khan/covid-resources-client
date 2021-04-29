@@ -1,6 +1,6 @@
 export const data = {
     categories : [
-        "All" , "Medicines" , "Beds" , "Plasma"
+        "All" , "Medicines" , "Beds" , "Plasma" , "Oxygen"
     ],
     allResources : [
         {
@@ -162,7 +162,39 @@ export const data = {
             id:'7',
             verified:false
         }
-    ]
+    ],
+    oxygen : [
+        {
+            title:'Oxygen Availabe',
+            description :'Beds Avilable in delhi confirmed on 26th',
+            categories : [ 'beds'],
+            date : '25/04/21',
+            upvotes : '14',
+            downvotes : '3',
+            id:'3',
+            verified:true
+        },
+        {
+            title:'Cylengers Availabe',
+            description :'Cylenders available from 10AM-12AM and 6PM-7PM',
+            categories : [ 'medicine'],
+            date : '25/04/21',
+            upvotes : '14',
+            downvotes : '3',
+            id:'4',
+            verified:false
+        },
+        {
+            title:'Cans Availabe',
+            description :'BEds Avilable in delhi confirmed on 26th',
+            categories : [ 'medicine'],
+            date : '25/04/21',
+            upvotes : '14',
+            downvotes : '3',
+            id:'5',
+            verified:false
+        },
+    ],
 
     
    
