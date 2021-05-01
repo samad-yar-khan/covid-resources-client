@@ -79,17 +79,41 @@ class ResourcesPage extends React.Component {
     })
   }
 
-  updateVoteCount = (id , num) => { //we just add num to existig frequncy
+  async updateVoteCountInDB(id , num){
+
+    try {
+      
+      const update = axios ({
+        method : 'PUT' ,
+        url : `http://localhost:1337/resources/${id}`,
+        data : {
+          votes : num
+        }
+      });
+
+    } catch (err) {
+      console.log(err);
+    }
+
+  }
+
+   updateVoteCount = (id , num) => { //we just add num to existig frequncy
+      
+
     let { allResources } = this.state;
+    let finalVotes = 0;
     allResources.forEach(resource => {
       if(resource.id === id){
         resource.votes += num;
+        finalVotes =   resource.votes;
         }
     });
 
     this.setState({
       allResources:allResources
     })
+
+    this.updateVoteCountInDB(id , finalVotes);
   }
   
 
