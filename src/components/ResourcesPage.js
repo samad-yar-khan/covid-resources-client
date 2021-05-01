@@ -21,6 +21,19 @@ class ResourcesPage extends React.Component {
     
   }
 
+  filterCategory(id,item) {
+
+    let idAvailable = false;
+    item.category.forEach((cat)=>{
+      if(cat.id === id){
+        idAvailable = true;
+      }
+    });
+
+    return idAvailable
+
+  }
+
   async componentDidMount(){
      
     try {
@@ -34,9 +47,21 @@ class ResourcesPage extends React.Component {
         method : 'GET' ,
         url: "http://localhost:1337/resources"
       })
-      console.log(resourcesRes.data);
+
+      const allResources = resourcesRes.data
+
+      let medicine = allResources.filter((item) => {return this.filterCategory(3,item)});
+      let oxygen = allResources.filter((item) => {return this.filterCategory(1,item)});
+      let plasma = allResources.filter((item) => {return this.filterCategory(2,item)} );
+      let beds = allResources.filter((item) => {return this.filterCategory(4,item)} );
+      
+
       this.setState({
-        allResources : resourcesRes.data
+        allResources : allResources,
+        plasma : plasma,
+        oxygen :oxygen,
+        medicine : medicine,
+        beds : beds
       })
 
 
