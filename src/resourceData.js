@@ -41,7 +41,7 @@ export const data = {
             categories : [ 'beds'],
             date : '25/04/21',
             votes : -9,
-            downvotes : '3',
+            downvotes : 3,
             id:'3',
             verified : true
         },
@@ -60,7 +60,7 @@ export const data = {
             description :'Injection Avilable in delhi confirmed on 26th',
             categories : [ 'medicine' , 'plasma'],
             date : '25/04/21',
-            votes : '14',
+            votes : 14,
             downvotes : '3',
             id:'5',
             verified : true
@@ -70,7 +70,7 @@ export const data = {
             description :'Injection Avilable in delhi confirmed on 26th',
             categories : [ 'medicine'],
             date : '25/04/21',
-            votes : '14',
+            votes : 1,
             downvotes : '3',
             id:'6',
             verified : true
@@ -90,7 +90,7 @@ export const data = {
             description :'Injection Avilable in delhi confirmed on 26th',
             categories : [ 'medicine'],
             date : '25/04/21',
-            votes : '14',
+            votes : -3,
             downvotes : '3',
             id:'8',
             verified:true
@@ -103,8 +103,8 @@ export const data = {
             description :'Injection Avilable in delhi confirmed on 26th',
             categories : [ 'medicine' , 'plasma'],
             date : '25/04/21',
-            votes : '14',
-            downvotes : '3',
+            votes : 1,
+            downvotes : -8,
             id:'5',
             verified:true
         },
@@ -113,7 +113,7 @@ export const data = {
             description :'Injection Avilable in delhi confirmed on 26th',
             categories : [ 'medicine'],
             date : '25/04/21',
-            votes : '14',
+            votes : 2,
             downvotes : '3',
             id:'8',
             verified:false
@@ -125,7 +125,7 @@ export const data = {
             description :'Beds Avilable in delhi confirmed on 26th',
             categories : [ 'beds'],
             date : '25/04/21',
-            votes : '14',
+            votes : 3,
             downvotes : '3',
             id:'3',
             verified:true
@@ -135,7 +135,7 @@ export const data = {
             description :'BEds Avilable in delhi confirmed on 26th',
             categories : [ 'medicine'],
             date : '25/04/21',
-            votes : '14',
+            votes : 3,
             downvotes : '3',
             id:'4',
             verified:false
@@ -157,7 +157,7 @@ export const data = {
             description :'Injection Avilable in delhi confirmed on 26th',
             categories : [ 'medicine','plasma'],
             date : '25/04/21',
-            votes : '14',
+            votes : 3,
             downvotes : '3',
             id:'7',
             verified:false
@@ -169,7 +169,7 @@ export const data = {
             description :'Beds Avilable in delhi confirmed on 26th',
             categories : [ 'beds'],
             date : '25/04/21',
-            votes : '14',
+            votes : 3,
             downvotes : '3',
             id:'3',
             verified:true
@@ -179,7 +179,7 @@ export const data = {
             description :'Cylenders available from 10AM-12AM and 6PM-7PM',
             categories : [ 'medicine'],
             date : '25/04/21',
-            votes : '14',
+            votes : 3,
             downvotes : '3',
             id:'4',
             verified:false
@@ -189,7 +189,7 @@ export const data = {
             description :'BEds Avilable in delhi confirmed on 26th',
             categories : [ 'medicine'],
             date : '25/04/21',
-            votes : '14',
+            votes : 3,
             downvotes : '3',
             id:'5',
             verified:false

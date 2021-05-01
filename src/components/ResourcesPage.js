@@ -25,6 +25,18 @@ class ResourcesPage extends React.Component {
     })
   }
 
+  updateVoteCount = (id , num) => { //we just add num to existig frequncy
+    let { allResources } = this.state;
+    allResources.forEach(resource => {
+      if(resource.id === id){
+        resource.votes += num;
+        }
+    });
+
+    this.setState({
+      allResources:allResources
+    })
+  }
   
 
 
@@ -64,6 +76,7 @@ class ResourcesPage extends React.Component {
                     votes = {item.votes}
                     // votes = {item.downvotes}
                     verified = {item.verified}
+                    updateVoteCount = {this.updateVoteCount}
                   />
           })
         }
