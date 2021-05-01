@@ -76,7 +76,7 @@ class VolunteerPage extends React.Component {
                 </button>
               </div>
               <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                <a class="text-blue-500">enactusnsit@gmail.com</a>
+              <a href="mailto:enactusnsit@gmail.com" target="_blank" class="text-blue-500">enactusnsit@gmail.com</a>
                 <p class="leading-normal my-5">
                   Netaji Subhas University of Technology, Azad Hind Fauj Marg
                   <br />
