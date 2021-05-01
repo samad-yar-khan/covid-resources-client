@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './assets/css/main.css';
 import App from './components/App';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee , faThumbsUp , faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+
+library.add( faCheckSquare, faCoffee , faThumbsUp , faThumbsDown )
+
 
 ReactDOM.render(
   <React.StrictMode>

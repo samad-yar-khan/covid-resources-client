@@ -1,4 +1,5 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -35,12 +36,12 @@ class ResourceItem extends React.Component {
 
         <div className="button-conatiner flex w-24 justify-between mt-2">
           <button className='relative bg-blue-500 text-white p-2 rounded font-bold text-xs overflow-visible mt-2'>
-            UP
-            <div className="absolute top-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-red-500 rounded-full text-xs ">{upvotes}</div>
+          <FontAwesomeIcon icon="thumbs-up" />
+            <div className="absolute bottom-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-white rounded-full text-xs text-blue-600 ">{upvotes}</div>
             </button>
-            
+            <div className="absolute bottom-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-white rounded-full text-xs text-blue-600 ">{upvotes}</div>
             <button className='relative bg-blue-500 text-white p-2 rounded font-bold overflow-visible text-xs mt-2'>
-            DN
+            <FontAwesomeIcon icon="thumbs-down" />
             <div className="absolute top-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-red-500 rounded-full text-xs">{downvotes}</div>
             </button>
             </div>
