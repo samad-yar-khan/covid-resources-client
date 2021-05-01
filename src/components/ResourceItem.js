@@ -1,16 +1,77 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLeaf } from '@fortawesome/free-solid-svg-icons';
 
 
 
 class ResourceItem extends React.Component {
 
- 
 
+  constructor(){
+    super();
+    this.state = {
+      liked:localStorage.getItem('Liked')//we will only maintaion whether a resoource is liked or not
+    }
+  }
+
+  handleLikeClick(id , liked){
+
+    let change = 0;
+    if(liked === null ){
+      
+      //user hasnt done liked/ disliked
+      change =1 ;
+      localStorage.setItem("Liked" , true);
+      this.setState({
+        liked : true
+      })
+    }else if(liked === true){
+      change = -1 ;
+      localStorage.setItem("Liked" , null);
+      this.setState({
+        liked : null
+      })
+    }else {
+      change = 2 ;
+      localStorage.setItem("Liked" , true);
+      this.setState({
+        liked : true
+      })
+    }
+
+  }
+
+  handleDisikeClick(id , liked){
+
+    let change = 0;
+    if(liked === null ){
+      
+      //user hasnt done liked/ disliked
+      change = -1 ;
+      localStorage.setItem("Liked" , false);
+      this.setState({
+        liked : false
+      })
+    }else if(liked === false){
+      change = 1 ;
+      localStorage.setItem("Liked" , null);
+      this.setState({
+        liked : null
+      })
+    }else {
+      change = -2 ;
+      localStorage.setItem("Liked" , false);
+      this.setState({
+        liked : false
+      })
+    }
+
+  }
 
   render(){
 
-    const {title , description , date , link, upvotes , downvotes , verified } = this.props;
+    const {title , description , date , link, votes , verified , id } = this.props;
+    const {liked} = this.state
 
 
     return (
@@ -35,14 +96,19 @@ class ResourceItem extends React.Component {
         </div>
 
         <div className="button-conatiner flex w-24 justify-between mt-2">
-          <button className='relative bg-blue-500 text-white p-2 rounded font-bold text-xs overflow-visible mt-2'>
-          <FontAwesomeIcon icon="thumbs-up" />
-            <div className="absolute bottom-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-white rounded-full text-xs text-blue-600 ">{upvotes}</div>
+         
+            <button 
+              onClick={()=>{this.handleLikeClick(id,liked)}}
+              className={`relative flex text-white p-2 rounded font-bold text-xs overflow-visible mt-2 ${this.state.liked === true ? 'bg-green-400' :'bg-blue-500'}`}
+            >
+              <FontAwesomeIcon icon="thumbs-up" />
             </button>
-            <div className="absolute bottom-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-white rounded-full text-xs text-blue-600 ">{upvotes}</div>
-            <button className='relative bg-blue-500 text-white p-2 rounded font-bold overflow-visible text-xs mt-2'>
+            <div className="font-bold pt-3 px-1 py-1 text-gray-500 text-s">{votes}</div>
+            <button 
+              onClick ={()=>{this.handleDisikeClick(id,liked)}}
+              className={`relative text-white p-2 rounded font-bold overflow-visible text-xs mt-2  ${this.state.liked === false ? 'bg-red-400' :  'bg-blue-500'}`}>
             <FontAwesomeIcon icon="thumbs-down" />
-            <div className="absolute top-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-red-500 rounded-full text-xs">{downvotes}</div>
+            {/* <div className="absolute top-0 right-0 -mt-4 -mr-4 px-1 py-1 bg-red-500 rounded-full text-xs">{downvotes}</div> */}
             </button>
             </div>
         </div>

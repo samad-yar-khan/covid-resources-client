@@ -59,9 +59,10 @@ class ResourcesPage extends React.Component {
                     description = {item.description}
                     link = {item.link}
                     key = {item.id}
+                    id={item.id}
                     date = {item.date}
-                    upvotes = {item.upvotes}
-                    downvotes = {item.downvotes}
+                    votes = {item.votes}
+                    // votes = {item.downvotes}
                     verified = {item.verified}
                   />
           })
