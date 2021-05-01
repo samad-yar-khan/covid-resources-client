@@ -14,13 +14,14 @@ class ResourcesPage extends React.Component {
       allResources : data.allResources ,
       medicine : data.medicine ,
       beds : data.beds,
-      plasama : data.plasma,
+      plasma : data.plasma,
       oxygen :data.oxygen,
       categories : data.categories
     }
     
   }
 
+  //filter items based on category
   filterCategory(id,item) {
 
     let idAvailable = false;
@@ -95,8 +96,8 @@ class ResourcesPage extends React.Component {
 
   render(){
 
-    const { allResources , medicine , plasama , beds , activeResourceIndex , categories , oxygen} = this.state;
-    const listArr = [allResources , medicine , beds , plasama , oxygen];
+    const { allResources , medicine , plasma , beds , activeResourceIndex , categories , oxygen} = this.state;
+    const listArr = [allResources , medicine , beds , plasma , oxygen];
     const list = listArr[activeResourceIndex];
     
     
