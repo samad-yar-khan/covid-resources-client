@@ -98,10 +98,10 @@ class ResourceItem extends React.Component {
             {description}
         </div>
         <p className={`${verified?'text-green-500':'text-red-500'}`}>
-          {verified?'Verified':'Unverified'}
+          {verified?`Verified at ${date}`:'Unverified'}
         </p>
         <div>
-            <a href={`${link}`} >Link</a>
+           98732888882
             
         </div>
 

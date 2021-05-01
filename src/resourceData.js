@@ -138,7 +138,7 @@ export const data = {
             votes : 3,
             downvotes : '3',
             id:'4',
-            verified:false
+            verified:false,
         },
     ],
     plasma : [
