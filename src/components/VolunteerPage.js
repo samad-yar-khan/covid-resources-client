@@ -4,30 +4,30 @@ import React from 'react'
 
 class VolunteerPage extends React.Component {
 
-  constructor() {
-    super(); //must call parents constructor first 
-    //we put this in the constrcutor because it will be used again and again to aceess the firestore
+  constructor(){
+     super(); //must call parents constructor first 
+     //we put this in the constrcutor because it will be used again and again to aceess the firestore
 
     //method 2 , we bind our functions to this (otherwise their 'this' value wull be uundefined when they are assigned to an event listenr or aany other var)
     // this.increaseQuantity = this.increaseQuantity.bind(this)}
   }
 
 
-  render() {
+  render(){
 
-
+   
 
 
     return (
       <div>
 
-        <div class="container px-5 py-24 mx-auto">
+       <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-              Call For Volunteers
+              Call For Volunteers 
             </h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Voluteer with us and help us verify resources
+              Voluteer with us and help us verify resources 
             </p>
           </div>
           <div class="lg:w-1/2 md:w-2/3 mx-auto">
@@ -76,7 +76,7 @@ class VolunteerPage extends React.Component {
                 </button>
               </div>
               <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                <a href="mailto:enactusnsit@gmail.com" target="_blank" class="text-blue-500">enactusnsit@gmail.com</a>
+                <a class="text-blue-500">enactusnsit@gmail.com</a>
                 <p class="leading-normal my-5">
                   Netaji Subhas University of Technology, Azad Hind Fauj Marg
                   <br />
@@ -133,7 +133,7 @@ class VolunteerPage extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+    </div>
     );
   }
 
