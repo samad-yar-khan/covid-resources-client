@@ -15,6 +15,7 @@ class ResourceItem extends React.Component {
   }
 
   componentDidMount(){
+ 
     this.setState({
       liked:localStorage.getItem(`Liked-${this.props.id}`)//we will only maintaion whether a resoource is liked or not
     })
@@ -80,7 +81,7 @@ class ResourceItem extends React.Component {
 
   render(){
 
-    const {title , description , date , link, votes , verified , id } = this.props;
+    const {title , description , date , votes , verified , id , phone , verified_at } = this.props;
     const {liked} = this.state
 
 
@@ -98,10 +99,10 @@ class ResourceItem extends React.Component {
             {description}
         </div>
         <p className={`${verified?'text-green-500':'text-red-500'}`}>
-          {verified?`Verified at ${date}`:'Unverified'}
+          {verified?`Verified at ${verified_at}`:'Unverified'}
         </p>
         <div>
-           98732888882
+           {phone}
             
         </div>
 

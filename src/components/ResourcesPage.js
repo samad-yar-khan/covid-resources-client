@@ -2,6 +2,8 @@ import React from 'react'
 import ResourceItem from './ResourceItem'
 import ResourcesNavbar from './ResourcesTab'
 import {data} from '../resourceData'
+import axios from 'axios'
+
 class ResourcesPage extends React.Component {
 
   constructor(){
@@ -17,6 +19,32 @@ class ResourcesPage extends React.Component {
       categories : data.categories
     }
     
+  }
+
+  async componentDidMount(){
+     
+    try {
+      const categoriesRes = await axios ({
+        method :"GET",
+        url : "http://localhost:1337/categories"
+      })    
+
+     
+      const resourcesRes = await axios({
+        method : 'GET' ,
+        url: "http://localhost:1337/resources"
+      })
+      console.log(resourcesRes.data);
+      this.setState({
+        allResources : resourcesRes.data
+      })
+
+
+    } catch (err) {
+      console.log(err);
+    }
+    
+
   }
 
   changeResourceCatgory = (categoryIndex)=>{
@@ -69,14 +97,15 @@ class ResourcesPage extends React.Component {
             return <ResourceItem
                     title = {item.title}
                     description = {item.description}
-                    link = {item.link}
                     key = {item.id}
                     id={item.id}
-                    date = {item.date}
+                    date = {item.updated_at}
                     votes = {item.votes}
                     // votes = {item.downvotes}
                     verified = {item.verified}
+                    verified_at = {item.verified_at}
                     updateVoteCount = {this.updateVoteCount}
+                    phone = {item.phone}
                   />
           })
         }
