@@ -56,6 +56,8 @@ class ResourcesPage extends React.Component {
       let oxygen = allResources.filter((item) => {return this.filterCategory(1,item)});
       let plasma = allResources.filter((item) => {return this.filterCategory(2,item)} );
       let beds = allResources.filter((item) => {return this.filterCategory(4,item)} );
+      let categories = categoriesRes.data.map((category)=> category.name)
+      categories =  ["All" , ...categories];
       
 
       this.setState({
@@ -63,7 +65,8 @@ class ResourcesPage extends React.Component {
         plasma : plasma,
         oxygen :oxygen,
         medicine : medicine,
-        beds : beds
+        beds : beds,
+        categories : categories
       })
 
 
@@ -122,7 +125,7 @@ class ResourcesPage extends React.Component {
   render(){
 
     const { allResources , medicine , plasma , beds , activeResourceIndex , categories , oxygen} = this.state;
-    const listArr = [allResources , medicine , beds , plasma , oxygen];
+    const listArr = [allResources , oxygen , plasma , medicine , beds];
     const list = listArr[activeResourceIndex];
     
     
