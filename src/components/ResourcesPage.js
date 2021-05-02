@@ -1,6 +1,7 @@
 import React from 'react'
 import ResourceItem from './ResourceItem'
 import ResourcesNavbar from './ResourcesTab'
+import Footer from './Footer'
 import {data} from '../resourceData'
 import axios from 'axios'
 
@@ -167,6 +168,8 @@ class ResourcesPage extends React.Component {
         </div> 
       
       </div>
+
+      <Footer/>
     </div>
     );
   }

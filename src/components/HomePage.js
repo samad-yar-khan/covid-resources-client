@@ -44,7 +44,7 @@ function HomePage() {
             <p className="mb-8 leading-relaxed text-xs sm:text-md">
             Search for all Covid-19 resources on Twitter using filters
             </p>
-            <div className="flex flex-col w-full justify-center items-center">
+            {/* <div className="flex flex-col w-full justify-center items-center">
               <div className="relative mr-4 lg:w-full xl:w-1/2 w-4/5 md:w-80% text-left my-5">
                 <label for="hero-field" className="leading-7 text-lg text-gray-600">
                   Name of the city
@@ -100,7 +100,16 @@ function HomePage() {
                   Generate Links
                 </div>
               </div>
-            </div>
+            </div> */}
+            <a href="https://covid19-twitter.in/" 
+              className="flex h-11 w-aoto px-4 bg-blue-400 rounded justify-center items-center text-white" 
+              target="_blank"  
+            >
+              <div>
+                Covid-19 Twitter Leads Here
+              </div>
+            </a>
+            
           </div>
         </div>
       </section>
@@ -186,7 +195,7 @@ function HomePage() {
                   Dwarka Sector-3, Dwarka, Delhi, 110075
                 </p>
                 <span className="inline-flex">
-                  <a href="https://www.facebook.com/EnactusNSUT/" className="text-gray-500">
+                  <a href="https://www.facebook.com/EnactusNSUT/" target="_blank" className="text-gray-500">
                     <svg
                       fill="currentColor"
                       strokeLinecap="round"
@@ -198,7 +207,7 @@ function HomePage() {
                       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                     </svg>
                   </a>
-                  <a href="https://twitter.com/EnactusNSUT" className="ml-4 text-gray-500">
+                  <a href="https://twitter.com/EnactusNSUT" target="_blank" className="ml-4 text-gray-500">
                     <svg
                       fill="currentColor"
                       strokeLinecap="round"
@@ -210,7 +219,7 @@ function HomePage() {
                       <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                     </svg>
                   </a>
-                  <a href="https://www.instagram.com/enactusnsut/" className="ml-4 text-gray-500">
+                  <a href="https://www.instagram.com/enactusnsut/" target="_blank" className="ml-4 text-gray-500">
                     <svg
                       fill="none"
                       stroke="currentColor"
