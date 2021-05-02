@@ -118,17 +118,17 @@ class ResourceItem extends React.Component {
         {/* <p className='text-xs text-gray-400' >
         {date}
         </p> */}
-        <div className ='description text-md text-gray-500 font-bold '>
+        <div className ='description text-sm text-gray-500 font-bold '>
             {location}
         </div>
-        <div className ='description text-md '>
+        <div className ='description text-sm  text-gray-600'>
             {description}
         </div>
-        <p className={`${verified?'text-green-500':'text-red-500'}`}>
+        <p className={`text-sm ${verified?'text-green-500':'text-red-500'}`}>
           {verified?`Verified at ${verifiedDate}  ${time}`:'Unverified'}
         </p>
-        <div>
-           {phone}
+        <div className="text-sm  text-gray-600 ">
+           <a href={`tel:${phone}`} >{phone}</a>
             
         </div>
 
