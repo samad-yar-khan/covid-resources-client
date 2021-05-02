@@ -80,11 +80,33 @@ class ResourceItem extends React.Component {
 
   }
 
+  parseDateTime=(myDate)=>{
+    const time = new Date(myDate).toLocaleTimeString('en',{ timeStyle: 'short', hour12: true, timeZone: 'IST' });
+    return time;
+  }
+
+  parseDate =(myDate)=>{
+    let date = new Date(myDate);  
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+    let dt = date.getDate();
+
+    if (dt < 10) {
+      dt = '0' + dt;
+    }
+    if (month < 10) {
+      month = '0' + month;
+    }
+
+    return (dt+'/'+month+'/'+year);
+  }
+
   render(){
 
-    const {title , description , date , votes , verified , id , phone , verified_at ,location} = this.props;
+    const {title , description  , votes , verified , id , phone , verified_at ,location} = this.props;
     const {liked} = this.state
-
+    const time = this.parseDateTime(verified_at);
+    const verifiedDate = this.parseDate(verified_at);
 
     return (
       <div className='p-2 bg-gray-50 mb-2'>
@@ -103,7 +125,7 @@ class ResourceItem extends React.Component {
             {description}
         </div>
         <p className={`${verified?'text-green-500':'text-red-500'}`}>
-          {verified?`Verified at ${verified_at}`:'Unverified'}
+          {verified?`Verified at ${verifiedDate}  ${time}`:'Unverified'}
         </p>
         <div>
            {phone}
