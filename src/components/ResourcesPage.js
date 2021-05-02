@@ -26,7 +26,8 @@ class ResourcesPage extends React.Component {
   filterCategory(id,item) {
 
     let idAvailable = false;
-    item.category.forEach((cat)=>{
+
+    item.categories.forEach((cat)=>{
       if(cat.id === id){
         idAvailable = true;
       }
@@ -53,10 +54,12 @@ class ResourcesPage extends React.Component {
       const allResources = resourcesRes.data;
       allResources.reverse();
 
-      let medicine = allResources.filter((item) => {return this.filterCategory(3,item)});
-      let oxygen = allResources.filter((item) => {return this.filterCategory(1,item)});
-      let plasma = allResources.filter((item) => {return this.filterCategory(2,item)} );
-      let beds = allResources.filter((item) => {return this.filterCategory(4,item)} );
+      let categoryId =categoriesRes.data.map((category)=>category.id);
+
+      let medicine = allResources.filter((item) => {return this.filterCategory(categoryId[2],item)});
+      let oxygen = allResources.filter((item) => {return this.filterCategory(categoryId[0],item)});
+      let plasma = allResources.filter((item) => {return this.filterCategory(categoryId[1],item)} );
+      let beds = allResources.filter((item) => {return this.filterCategory(categoryId[3],item)} );
       let categories = categoriesRes.data.map((category)=> category.name)
       categories =  ["All" , ...categories];
       
@@ -145,7 +148,7 @@ class ResourcesPage extends React.Component {
           </div>
         </header>
           
-      <div>
+      <div className="min-h-screen">
         {
          
           list.map((item)=>{

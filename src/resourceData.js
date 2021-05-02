@@ -210,3 +210,10 @@ export const data = {
 //       .then(res => res.json())
 //       .then(json => setUser(json.user))
 //   }
+
+{/*
+mongodb+srv://samadykhan:<password>@cluster0.skyzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+mongodb+srv://samadykhan:<password>@cluster0.skyzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+*/}
