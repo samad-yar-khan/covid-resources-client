@@ -1,4 +1,5 @@
 import React from 'react'
+import VolunteerForm from './VolunteerForm'
 
 
 
@@ -10,6 +11,7 @@ class VolunteerPage extends React.Component {
 
     //method 2 , we bind our functions to this (otherwise their 'this' value wull be uundefined when they are assigned to an event listenr or aany other var)
     // this.increaseQuantity = this.increaseQuantity.bind(this)}
+    
   }
 
 
@@ -21,62 +23,22 @@ class VolunteerPage extends React.Component {
     return (
       <div>
 
-       <div className="container px-5 py-24 mx-auto">
+<div className="container px-5 py-10 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-              Call For Volunteers 
+              Volunteer Form
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Voluteer with us and help us verify resources 
+              Volunteer with us a help us verify and leads 
             </p>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label for="name" className="leading-7 text-sm text-gray-600">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-              </div>
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label for="email" className="leading-7 text-sm text-gray-600">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-              </div>
-              <div className="p-2 w-full">
-                <div className="relative">
-                  <label for="message" className="leading-7 text-sm text-gray-600">
-                    Volunteer Application
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                  ></textarea>
-                </div>
-              </div>
-              <div className="p-2 w-full">
-                <button className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
-                  Submit
-                </button>
-              </div>
+
+              <VolunteerForm />
+              
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-              <a href="mailto:enactusnsit@gmail.com" target="_blank" className="text-blue-500">enactusnsit@gmail.com</a>
+                <a href="mailto:enactusnsit@gmail.com" target="_blank" className="text-blue-500">enactusnsit@gmail.com</a>
                 <p className="leading-normal my-5">
                   Netaji Subhas University of Technology, Azad Hind Fauj Marg
                   <br />
@@ -131,6 +93,24 @@ class VolunteerPage extends React.Component {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="bg-gray-100">
+          <div className="container mx-auto py-4 px-10 flex flex-wrap flex-col sm:flex-row">
+            <p className="text-gray-500 text-sm text-center sm:text-left">
+              © 2021 Aashray —
+              <a
+                href="https://enactusnsut.com/"
+                className="text-gray-600 ml-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Enactus NSUT
+              </a>
+            </p>
+            <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">
+            Social Entrepreneurs available 24x7
+            </span>
           </div>
         </div>
     </div>
