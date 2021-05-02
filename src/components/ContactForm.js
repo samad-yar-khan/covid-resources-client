@@ -11,10 +11,12 @@ class ContactForm extends React.Component{
     
             userName : "" ,
             userEmail : "" ,
-            mailContent : ""
+            mailContent : "",
+            formSubmitted : false
+    
     
         }   
-
+        this.submitForm = this.submitForm.bind(this)
     }
 
     handleNameChange = (event)=>{
@@ -39,10 +41,49 @@ class ContactForm extends React.Component{
      
     }
 
-    submitForm = ()=>{
+    resetState = ()=>{
+        this.setState({
+            
+            userName : "" ,
+            userEmail : "" ,
+            mailContent : "",
+            formSubmitted : true
+        })
 
-        axios.post("")
+        setTimeout(()=>{
+            this.setState({
+                formSubmitted:false
+            })
+        },5000);
+    }
 
+    async submitForm(e) {
+        e.preventDefault();
+        const {  userName ,
+        userEmail  ,
+        mailContent} = this.state;
+        
+        try {
+
+            const res = await axios ({
+                method : 'POST' ,
+                url : `http://localhost:1337/messages`,
+                data : {
+                    "name":userName ,
+                    "email": userEmail,
+                    "content" : mailContent 
+                }
+              });
+              
+              this.resetState();
+
+        } catch (err) {
+            console.log(err);
+        }
+
+        // this.resetState();
+
+        
 
     }
 
@@ -52,9 +93,12 @@ class ContactForm extends React.Component{
     render(){
         return (
            
-            <form className= "flex flex-wrap -m-2" onSubmit = {}>
+            <form className= "flex flex-wrap -m-2" >
+                {this.state.formSubmitted && 
+                  <p className ="text-green-300">
+                      Thank you for Contacting Us ! We will be reaching out to you soon !
+                  </p>}
                 <div className="p-2 w-1/2">
-                  
                   <div className="relative">
                     <label for="name" className="leading-7 text-sm text-gray-600">
                       Name
@@ -76,7 +120,9 @@ class ContactForm extends React.Component{
                       Email
                     </label>
                     <input
+                     value ={this.state.userEmail}
                         required
+                        onChange={this.handleEmailChange}
                       type="email"
                       id="email"
                       name="email"
@@ -104,6 +150,8 @@ class ContactForm extends React.Component{
                       Message
                     </label>
                     <textarea
+                    value ={this.state.mailContent}
+                     onChange = {this.handleContentChange}
                       id="message"
                       name="message"
                       className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
@@ -111,8 +159,9 @@ class ContactForm extends React.Component{
                   </div>
                 </div>
                 <div className="p-2 w-full">
-                  <button className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
+                  <button onClick={(e)=>{this.submitForm(e)}}className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
                     Submit
+
                   </button>
                 </div>
             </form>

@@ -87,7 +87,7 @@ class ResourcesPage extends React.Component {
 
     try {
       
-      const update = axios ({
+      const update = await axios ({
         method : 'PUT' ,
         url : `http://localhost:1337/resources/${id}`,
         data : {
