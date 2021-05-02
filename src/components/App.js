@@ -60,6 +60,7 @@ class App extends React.Component {
           changeTab = {this.changeTab}
           setCurrentTab = {this.state.activeTabIndex}
         />
+        <div>
         <Switch>
           <Route path ='/' exact component={HomePage} />
           <Route path ='/home' exact component={HomePage}/>
@@ -67,6 +68,7 @@ class App extends React.Component {
           <Route path ='/volunteer' exact component={VolunteerPage}/>
           <Route path ='/resources' exact component={ResourcesPage}/>
         </Switch>
+        </div>
         </div>
       
       </Router>

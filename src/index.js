@@ -5,9 +5,9 @@ import App from './components/App';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee , faThumbsUp , faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee , faThumbsUp , faThumbsDown, faHandPointer, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
-library.add( faCheckSquare, faCoffee , faThumbsUp , faThumbsDown )
+library.add( faCheckSquare, faCoffee , faThumbsUp , faThumbsDown , faHandPointer , faAngleDoubleRight)
 
 
 ReactDOM.render(
