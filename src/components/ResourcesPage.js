@@ -49,7 +49,8 @@ class ResourcesPage extends React.Component {
         url: "http://localhost:1337/resources"
       })
 
-      const allResources = resourcesRes.data
+      const allResources = resourcesRes.data;
+      allResources.reverse();
 
       let medicine = allResources.filter((item) => {return this.filterCategory(3,item)});
       let oxygen = allResources.filter((item) => {return this.filterCategory(1,item)});
@@ -155,6 +156,7 @@ class ResourcesPage extends React.Component {
                     verified = {item.verified}
                     verified_at = {item.verified_at}
                     updateVoteCount = {this.updateVoteCount}
+                    location = {item.location}
                     phone = {item.phone}
                   />
           })

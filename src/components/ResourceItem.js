@@ -81,7 +81,7 @@ class ResourceItem extends React.Component {
 
   render(){
 
-    const {title , description , date , votes , verified , id , phone , verified_at } = this.props;
+    const {title , description , date , votes , verified , id , phone , verified_at ,location} = this.props;
     const {liked} = this.state
 
 
@@ -92,9 +92,12 @@ class ResourceItem extends React.Component {
             {title}
    
         </div>
-        <p className='text-xs text-gray-400' >
+        {/* <p className='text-xs text-gray-400' >
         {date}
-        </p>
+        </p> */}
+        <div className ='description text-md text-gray-500 font-bold '>
+            {location}
+        </div>
         <div className ='description text-md '>
             {description}
         </div>
