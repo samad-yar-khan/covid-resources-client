@@ -18,7 +18,7 @@ function Navbar(props){
                
                 {/* <span className="ml-3 text-xl">Tailblocks</span> */}
                 
-                <nav className="ml-auto flex justify-items-end text-base justify-end items-end cursor-pointer">
+                <nav className="ml-auto flex justify-items-end text-base justify-end items-end cursor-pointer justify-end">
                     {
                         tabs.map((tab , index) => {
                             

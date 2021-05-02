@@ -20,14 +20,14 @@ function HomePage() {
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-col md:px-5 py-24 sm:justify-center items-center px-0">
+        <div className="container mx-auto flex flex-col md:px-5 py-10 sm:justify-center items-center px-0">
           <img
             className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
             alt="hero"
             src={homeimage}
           />
           <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-1 font-medium text-gray-900">
+            <h1 className="title-font sm:text-4xl text-2xl mb-1 font-medium text-gray-900">
             Twitter search for Covid-19
             </h1>
             <svg
@@ -40,7 +40,7 @@ function HomePage() {
                     >
                       <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                     </svg>
-            <p className="mb-8 leading-relaxed">
+            <p className="mb-8 leading-relaxed text-xs sm:text-md">
             Search for all Covid-19 resources on Twitter using filters
             </p>
             <div className="flex flex-col w-full justify-center items-center">
@@ -103,6 +103,7 @@ function HomePage() {
           </div>
         </div>
       </section>
+     
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-col px-5 py-4 justify-center items-center">
           <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
@@ -111,10 +112,10 @@ function HomePage() {
             </h1>
           </div>
           <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-blue-500 text-blue-500 flex-shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" className="sm:w-16 sm:h-16 w-10 h-10" fill="#fff" viewBox="0 0 24 24" stroke="currentColor">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
+                <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-blue-500 text-blue-500 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="sm:w-16 sm:h-16 w-10 h-10" fill="#fff" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-gray-900 text-xl title-font font-medium mb-2">
@@ -160,8 +161,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+      
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-10 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
               Contact Us
