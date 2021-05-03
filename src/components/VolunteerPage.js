@@ -29,7 +29,7 @@ class VolunteerPage extends React.Component {
               <VolunteerForm />
               
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                <a href="mailto:enactusnsit@gmail.com" target="_blank" className="text-blue-500" rel="noreferrer">enactusnsit@gmail.com</a>
+                <a href="mailto:enactusnsut@gmail.com" target="_blank" className="text-blue-500" rel="noreferrer">enactusnsut@gmail.com</a>
                 <p className="leading-normal my-5">
                   Netaji Subhas University of Technology, Azad Hind Fauj Marg
                   <br />
