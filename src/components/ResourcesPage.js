@@ -42,13 +42,13 @@ class ResourcesPage extends React.Component {
     try {
       const categoriesRes = await axios ({
         method :"GET",
-        url : "http://localhost:1337/categories"
+        url : "https://covid-resources-enactus.herokuapp.com/categories"
       })    
 
      
       const resourcesRes = await axios({
         method : 'GET' ,
-        url: "http://localhost:1337/resources"
+        url: "https://covid-resources-enactus.herokuapp.com/resources"
       })
 
       const allResources = resourcesRes.data;
@@ -93,7 +93,7 @@ class ResourcesPage extends React.Component {
       
       const update = await axios ({
         method : 'PUT' ,
-        url : `http://localhost:1337/resources/${id}`,
+        url : `https://covid-resources-enactus.herokuapp.com/${id}`,
         data : {
           votes : num
         }

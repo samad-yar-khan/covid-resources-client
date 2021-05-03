@@ -81,7 +81,7 @@ class VolunteerForm extends React.Component{
 
             const res = await axios ({
                 method : 'POST' ,
-                url : `http://localhost:1337/volunteers`,
+                url : `https://covid-resources-enactus.herokuapp.com/volunteers`,
                 data : {
                     "name":userName ,
                     "email": userEmail,
