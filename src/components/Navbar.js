@@ -13,7 +13,7 @@ function Navbar(props){
         <header className="text-gray-600 body-font mt-2 mb-2 ">
              <div className="container mx-auto flex  p-1 flex-row items-center">
                
-                <img src={EnactusLogo} alt="Enactus NSUT" fill="none" stroke="currentColor" stroke-ss="round" strokeLinejoin="round" strokeWidth="2" className="sm:w-20 sm:h-20 w-10 h-10 text-white p-1 bg-blue-600 rounded" />
+                <img src={EnactusLogo} alt="Enactus NSUT" fill="none" stroke="currentColor" stroke-ss="round" strokeLinejoin="round" strokeWidth="2" className="sm:w-20 sm:h-20 w-10 h-10 relative top-1 text-white p-1 bg-white rounded" />
                     
                
                 {/* <span className="ml-3 text-xl">Tailblocks</span> */}
