@@ -10,14 +10,14 @@ class ResourcesPage extends React.Component {
   constructor(){
     super(); //must call parents constructor first 
     this.state = {
-      data : data,
+      // data : data,
       activeResourceIndex : 0,
-      allResources : data.allResources ,
-      medicine : data.medicine ,
-      beds : data.beds,
-      plasma : data.plasma,
-      oxygen :data.oxygen,
-      categories : data.categories
+      allResources : [] ,
+      medicine : [] ,
+      beds : [],
+      plasma : [],
+      oxygen :[],
+      categories : []
     }
     
   }
@@ -149,8 +149,13 @@ class ResourcesPage extends React.Component {
         </header>
           
       <div className="min-h-screen">
+        {/* {(list.length===0)&&
+          <h1 className="text-xl font-bold text-blue-600 flex item-center justify-center px-4 py-6">
+            We dont have any verfieds leads on this resource !
+          </h1>
+        } */}
         {
-         
+  
           list.map((item)=>{
             return <ResourceItem
                     title = {item.title}

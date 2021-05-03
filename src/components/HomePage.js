@@ -21,7 +21,7 @@ function HomePage() {
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-col md:px-5 py-10 sm:justify-center items-center px-0">
+        <div className="container mx-auto flex flex-col md:px-5 pt-10 pb-4 sm:justify-center items-center px-0">
           <img
             className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
             alt="hero"
