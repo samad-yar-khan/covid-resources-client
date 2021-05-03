@@ -15,13 +15,14 @@ class App extends React.Component {
         
         resources : [],
         tabs : [
-                {
-                  tabName : "Home" , 
-                  tabLink :'home'
-                }, 
+               
                 {
                   tabName : "Resources" , 
                   tabLink :'resources'
+                }, 
+                {
+                  tabName : "Twitter" , 
+                  tabLink :'twitter'
                 }, 
                 {
                   tabName : "Volunteer" , 
@@ -62,8 +63,9 @@ class App extends React.Component {
         />
         <div>
         <Switch>
-          <Route path ='/' exact component={HomePage} />
-          <Route path ='/home' exact component={HomePage}/>
+          <Route path ='/' exact component={ResourcesPage} />
+          <Route path ='/home' exact component={ResourcesPage} />
+          <Route path ='/twitter' exact component={HomePage}/>
           <Route path ='/about' exact component={AboutPage}/>
           <Route path ='/volunteer' exact component={VolunteerPage}/>
           <Route path ='/resources' exact component={ResourcesPage}/>

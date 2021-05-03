@@ -4,6 +4,7 @@ import ResourcesNavbar from './ResourcesTab'
 import Footer from './Footer'
 // import {data} from '../resourceData'
 import axios from 'axios'
+import Loader from './Loader'
 
 class ResourcesPage extends React.Component {
 
@@ -17,7 +18,8 @@ class ResourcesPage extends React.Component {
       beds : [],
       plasma : [],
       oxygen :[],
-      categories : []
+      categories : [],
+      loading : true
     }
     
   }
@@ -70,7 +72,8 @@ class ResourcesPage extends React.Component {
         oxygen :oxygen,
         medicine : medicine,
         beds : beds,
-        categories : categories
+        categories : categories,
+        loading : false
       })
 
 
@@ -127,6 +130,10 @@ class ResourcesPage extends React.Component {
 
 
   render(){
+
+    if(this.state.loading === true ){
+      return (<Loader />)
+    }
 
     const { allResources , medicine , plasma , beds , activeResourceIndex , categories , oxygen} = this.state;
     const listArr = [allResources , oxygen , plasma , medicine , beds];
