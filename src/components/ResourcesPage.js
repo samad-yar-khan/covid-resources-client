@@ -93,7 +93,7 @@ class ResourcesPage extends React.Component {
       
       await axios ({
         method : 'PUT' ,
-        url : `https://covid-resources-enactus.herokuapp.com/${id}`,
+        url : `https://covid-resources-enactus.herokuapp.com/resources/${id}`,
         data : {
           votes : num
         }
