@@ -65,7 +65,7 @@ class ContactForm extends React.Component{
         
         try {
 
-            const res = await axios ({
+            await axios ({
                 method : 'POST' ,
                 url : `https://covid-resources-enactus.herokuapp.com/messages`,
                 data : {

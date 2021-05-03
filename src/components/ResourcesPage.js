@@ -2,7 +2,7 @@ import React from 'react'
 import ResourceItem from './ResourceItem'
 import ResourcesNavbar from './ResourcesTab'
 import Footer from './Footer'
-import {data} from '../resourceData'
+// import {data} from '../resourceData'
 import axios from 'axios'
 
 class ResourcesPage extends React.Component {
@@ -91,7 +91,7 @@ class ResourcesPage extends React.Component {
 
     try {
       
-      const update = await axios ({
+      await axios ({
         method : 'PUT' ,
         url : `https://covid-resources-enactus.herokuapp.com/${id}`,
         data : {
