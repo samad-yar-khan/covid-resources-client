@@ -20,8 +20,9 @@ class VolunteerPage extends React.Component {
               Volunteer Form
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Volunteer with us a help us verify and leads 
+              Volunteer with us . Help us veriify leads
             </p>
+           
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">

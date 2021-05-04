@@ -103,10 +103,11 @@ class ResourceItem extends React.Component {
 
   render(){
 
-    const {title , description  , votes , verified , id , phone , verified_at ,location} = this.props;
+    const {title , description  , votes , verified , id , verified_at ,location , phoneNumbers} = this.props;
     const {liked} = this.state
     const time = this.parseDateTime(verified_at);
     const verifiedDate = this.parseDate(verified_at);
+    const showAllPhone = phoneNumbers === null || phoneNumbers === undefined;
 
     return (
       <div className='p-2 bg-gray-50 mb-2'>
@@ -127,10 +128,19 @@ class ResourceItem extends React.Component {
         <p className={`text-sm ${verified?'text-green-500':'text-red-500'}`}>
           {verified?`Verified at ${verifiedDate}  ${time}`:'Unverified'}
         </p>
-        <div className="text-sm  text-gray-600 ">
-           <a href={`tel:${phone}`} >{phone}</a>
-            
-        </div>
+      
+        {
+          !showAllPhone &&
+          <div className="text-sm  text-gray-600 flex flex-wrap">
+            { phoneNumbers.map((number) =>  <a className="pr-2"href={`tel:${number}`} >{number}</a>)}
+          </div>        
+        }
+        {/* <div className="text-sm  text-gray-600 flex flex-wrap ">
+
+          <a href={`tel:${phone}`} >{phone}</a>
+                 
+        </div> */}
+       
 
         <div className="button-conatiner flex w-24 justify-between mt-2">
          

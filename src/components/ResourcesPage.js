@@ -176,7 +176,7 @@ class ResourcesPage extends React.Component {
                     verified_at = {item.verified_at}
                     updateVoteCount = {this.updateVoteCount}
                     location = {item.location}
-                    phone = {item.phone}
+                    phoneNumbers ={item.phoneNumbers}
                   />
           })
         }
