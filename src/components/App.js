@@ -5,9 +5,8 @@ import AboutPage from './AboutPage'
 import VolunteerPage from './VolunteerPage'
 import ResourcesPage from './ResourcesPage'
 import {BrowserRouter as Router , Switch , Route } from 'react-router-dom'
-
-
-
+import ReactGA from 'react-ga'
+ReactGA.initialize('G-QC3VNL54XF');
 
 
 class App extends React.Component {
@@ -49,17 +48,26 @@ class App extends React.Component {
     })
   }
 
-  // componentDidMount(){
-  //   ReactGA.initialize('G-QEKHMEYD35');
-  //   ReactGA.pageview(window.location.pathname + window.location.search);
-  //   // console.log(window.location.pathname);
-  // }  
+  componentDidMount=()=>{
+ 
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    
+  }  
 
-  // componentDidUpdate(){
+  componentDidUpdate=()=>{
    
-  //   ReactGA.pageview(window.location.pathname + window.location.search);
-  //   // console.log(window.location.pathname);
-  // }
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    // console.log(window.location.pathname + window.location.search);
+    // window.dataLayer.push({
+    //   event: 'pageview',
+    //   page: {
+    //     url: window.location,
+    //     title: window.title
+    //   }
+    // });
+  
+    // console.log(window.location.pathname);
+  }
 
 
   render(){
