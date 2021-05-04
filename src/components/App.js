@@ -7,6 +7,9 @@ import ResourcesPage from './ResourcesPage'
 import {BrowserRouter as Router , Switch , Route } from 'react-router-dom'
 
 
+
+
+
 class App extends React.Component {
 
   constructor(){
@@ -46,14 +49,25 @@ class App extends React.Component {
     })
   }
 
+  // componentDidMount(){
+  //   ReactGA.initialize('G-QEKHMEYD35');
+  //   ReactGA.pageview(window.location.pathname + window.location.search);
+  //   // console.log(window.location.pathname);
+  // }  
+
+  // componentDidUpdate(){
+   
+  //   ReactGA.pageview(window.location.pathname + window.location.search);
+  //   // console.log(window.location.pathname);
+  // }
+
 
   render(){
 
+ 
     
-
-
     return (
-      <Router>
+      <Router >
         <div className="App">
         <Navbar 
           activeTabIndex = {this.state.activeTabIndex}
