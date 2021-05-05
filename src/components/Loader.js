@@ -8,7 +8,7 @@ function Loader(props) {
     
       <div className='min-h-screen  item-center justify-center width-screen'>
         
-        <img src={loader} alt="LOADING..." className="mx-auto mt-48 h-24 w-24" />
+        <img src={loader} alt="LOADING..." className="mx-auto mt-48 h-20 w-20" />
       
       </div>
      
