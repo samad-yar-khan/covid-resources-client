@@ -107,7 +107,7 @@ class ResourceItem extends React.Component {
     const {liked} = this.state
     const time = this.parseDateTime(verified_at);
     const verifiedDate = this.parseDate(verified_at);
-    const showAllPhone = phoneNumbers === null || phoneNumbers === undefined;
+    const showAllPhone = phoneNumbers === null || phoneNumbers === undefined || !Array.isArray(phoneNumbers);
 
     return (
       <div className='p-2 bg-gray-50 mb-2'>
@@ -130,9 +130,9 @@ class ResourceItem extends React.Component {
         </p>
       
         {
-          !showAllPhone &&
+          (!showAllPhone) &&
           <div className="text-sm  text-gray-600 flex flex-wrap">
-            { phoneNumbers.map((number) =>  <a className="pr-2"href={`tel:${number}`} >{number}</a>)}
+            { phoneNumbers.map((number , numIndex) =>  <a className="pr-2"href={`tel:${number}` } key={numIndex}>{number}</a>)}
           </div>        
         }
         {/* <div className="text-sm  text-gray-600 flex flex-wrap ">
