@@ -190,6 +190,10 @@ function HomePage() {
               
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                 <a href="mailto:enactusnsut@gmail.com" target="_blank" className="text-blue-500" rel="noreferrer">enactusnsut@gmail.com</a>
+                <p className='pt-4'>
+                  <a href="https://docs.google.com/document/d/1IkPCFBtd45OCdIriazr2mYRr4HLafddIShcCbWK91lM/edit" target="_blank" className="text-blue-500 pt-6" rel="noreferrer">Terms and Conditions</a>
+                </p>
+
                 <p className="leading-normal my-5">
                   Netaji Subhas University of Technology, Azad Hind Fauj Marg
                   <br />
