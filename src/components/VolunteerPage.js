@@ -1,5 +1,5 @@
 import React from 'react'
-import VolunteerForm from './VolunteerForm'
+import ContactForm from './ContactForm'
 
 
 
@@ -20,14 +20,33 @@ class VolunteerPage extends React.Component {
               Volunteer Form
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Volunteer with us. Help us verify leads
+              Volunteer with us . Help us verify leads
             </p>
            
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
 
-              <VolunteerForm />
+              {/* <VolunteerForm /> */}
+              <a href="https://forms.gle/jbzwXhaC22V1T8Bc6" 
+              className="flex h-11 w-aoto px-4 bg-blue-600 mt-8 mx-auto mb-28 rounded justify-center items-center text-white" 
+              target="_blank"  
+              rel="noopener noreferrer"
+            >
+              <div>
+                Click Here to Volunteer
+              </div>
+            </a>
+
+            <div className="flex flex-col text-center w-full mb-12">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+            Contact Us
+            </h1>
+          
+           
+            </div>
+
+            <ContactForm/>
               
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                 <a href="mailto:enactusnsut@gmail.com" target="_blank" className="text-blue-500" rel="noreferrer">enactusnsut@gmail.com</a>

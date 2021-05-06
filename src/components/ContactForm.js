@@ -54,7 +54,7 @@ class ContactForm extends React.Component{
             this.setState({
                 formSubmitted:false
             })
-        },5000);
+        },10000);
     }
 
     async submitForm(e) {
@@ -95,7 +95,7 @@ class ContactForm extends React.Component{
            
             <form className= "flex flex-wrap -m-2" >
                 {this.state.formSubmitted && 
-                  <p className ="text-green-300">
+                  <p className ="text-green-400">
                       Thank you for Contacting Us ! We will be reaching out to you soon !
                   </p>}
                 <div className="p-2 w-1/2">

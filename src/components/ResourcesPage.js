@@ -146,7 +146,7 @@ class ResourcesPage extends React.Component {
 
     return (
       <div>
-      <div className="flex flex-col  container px-2  mx-auto bg-white relative  ">
+      <div className="flex flex-col  container px-2  mx-auto bg-white relative">
     
         <header className='overflow-hidden relative'>
           <div className='tabs relative'>

@@ -76,7 +76,7 @@ class App extends React.Component {
     
     return (
       <Router >
-        <div className="App">
+        <div className="App  xl:mx-14">
         <Navbar 
           activeTabIndex = {this.state.activeTabIndex}
           tabs = {this.state.tabs}
