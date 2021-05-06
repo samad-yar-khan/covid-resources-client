@@ -23,8 +23,6 @@ class AboutPage extends React.Component {
           
           <div class="flex flex-col items-center container px-5  mx-auto bg-gray-100 h-40 ">
     
-    
-          
             <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">About</h2>
             <p class="leading-relaxed text-base">About Page Info</p>
         
