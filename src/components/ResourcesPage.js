@@ -51,11 +51,11 @@ class ResourcesPage extends React.Component {
      
       const resourcesRes = await axios({
         method : 'GET' ,
-        url: "https://covid-resources-enactus.herokuapp.com/resources"
+        url: "https://covid-resources-enactus.herokuapp.com/resources?_sort=verified_at:desc&_limit=200"
       })
 
       const allResources = resourcesRes.data;
-      allResources.reverse();
+      // allResources.reverse();
 
       let categoryId =categoriesRes.data.map((category)=>category.id);
 
