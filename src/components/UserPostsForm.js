@@ -96,6 +96,11 @@ class UserPostsForm extends React.Component{
                 userPhone,
                 userContent,
                 userTitle } = this.state;
+
+        if(userName === "" || userContent===""){
+          window.prompt("Invalid Details");
+          return;
+        }
         
         try {
 

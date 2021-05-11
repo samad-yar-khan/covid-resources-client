@@ -1,6 +1,7 @@
 import React from 'react'
 import ResourceItem from './ResourceItem'
 import ResourcesNavbar from './ResourcesTab'
+import PostItem from './PostItem'
 import Footer from './Footer'
 import UserPostsForm from './UserPostsForm'
 // import {data} from '../resourceData'
@@ -84,7 +85,7 @@ class ResourcesPage extends React.Component {
         beds : beds,
         icu : icu,
         categories : categories,
-        userPosts : userPosts,
+        userPosts : userPosts.data,
         loading : false
       })
 
@@ -145,7 +146,7 @@ class ResourcesPage extends React.Component {
       
       await axios ({
         method : 'PUT' ,
-        url : `https://covid-resources-enactus.herokuapp.com/community-posts/${id}`,
+        url : `http://localhost:1337/community-posts/${id}`,
         data : {
           votes : num
         }
@@ -236,7 +237,36 @@ class ResourcesPage extends React.Component {
         {
           //Displaying posts 
           activeResourceIndex === 1 &&
-          <UserPostsForm />
+          <div>
+             <UserPostsForm />
+          <div>
+            {
+               list.map((item)=>{
+                return <PostItem
+                        title = {item.title}
+                        name = {item.name}
+                        content = {item.content}
+                        key = {item.id}
+                        id={item.id}
+                        date = {item.updated_at}
+                        votes = {item.votes}
+                        // votes = {item.downvotes}
+                       createdAt = {item.createdAt}
+                        updatePostVoteCount = {this.updatePostVoteCount}
+                        location = {item.location}
+                        phoneNumber ={item.phone}
+                        email={item.email}
+                      />
+              })
+          
+            }
+          </div>
+          
+          <p>hello</p>
+          </div>
+         
+          
+          
 
         }
         </div> 
