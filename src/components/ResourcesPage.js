@@ -20,6 +20,7 @@ class ResourcesPage extends React.Component {
       oxygen :[],
       categories : [],
       icu :[],
+      userPosts:[],
       loading : true
     }
     
@@ -54,6 +55,11 @@ class ResourcesPage extends React.Component {
         url: "https://covid-resources-enactus.herokuapp.com/resources?_sort=verified_at:desc&_limit=200"
       })
 
+      const userPosts = await axios({
+        method : 'GET' ,
+        url :"http://localhost:1337/community-posts?_sort=createdAt:desc&_limit=200"
+      })
+
       const allResources = resourcesRes.data;
       // allResources.reverse();
 
@@ -65,7 +71,8 @@ class ResourcesPage extends React.Component {
       let beds = allResources.filter((item) => {return this.filterCategory(categoryId[3],item)} );
       let icu = allResources.filter((item) => {return this.filterCategory(categoryId[4],item)} );
       let categories = categoriesRes.data.map((category)=> category.name)
-      categories =  ["All" , ...categories];
+     
+      categories =  ["All", "Community"  ,...categories];
       
 
       this.setState({
@@ -76,6 +83,7 @@ class ResourcesPage extends React.Component {
         beds : beds,
         icu : icu,
         categories : categories,
+        userPosts : userPosts,
         loading : false
       })
 
@@ -138,8 +146,8 @@ class ResourcesPage extends React.Component {
       return (<Loader />)
     }
 
-    const { allResources , medicine , plasma , beds , activeResourceIndex , categories , oxygen , icu} = this.state;
-    const listArr = [allResources , oxygen , plasma , medicine , beds , icu];
+    const { allResources , medicine , plasma , beds , activeResourceIndex , categories , oxygen , icu ,userPosts} = this.state;
+    const listArr = [allResources , userPosts , oxygen , plasma , medicine , beds , icu];
     const list = listArr[activeResourceIndex];
     
     
