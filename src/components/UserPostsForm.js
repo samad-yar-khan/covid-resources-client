@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 
-class UserPosts extends React.Component{
+class UserPostsForm extends React.Component{
 
     constructor(){
 
@@ -271,4 +271,4 @@ class UserPosts extends React.Component{
 
 }
 
-export default UserPosts 
+export default UserPostsForm
