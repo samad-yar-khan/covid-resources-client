@@ -139,6 +139,43 @@ class ResourcesPage extends React.Component {
     this.updateVoteCountInDB(id , finalVotes);
   }
   
+  async updatePostVoteCountInDB(id , num){
+
+    try {
+      
+      await axios ({
+        method : 'PUT' ,
+        url : `https://covid-resources-enactus.herokuapp.com/community-posts/${id}`,
+        data : {
+          votes : num
+        }
+      });
+
+    } catch (err) {
+      console.log(err);
+    }
+
+  }
+
+   updatePostVoteCount = (id , num) => { //we just add num to existig frequncy
+      
+
+    let { userPosts } = this.state;
+    let finalVotes = 0;
+    userPosts.forEach(post => {
+      if(post.id === id){
+        post.votes += num;
+        finalVotes =   post.votes;
+        }
+    });
+
+    this.setState({
+      userPosts:userPosts
+    })
+
+    this.updatePostVoteCountInDB(id , finalVotes);
+  }
+  
 
 
   render(){
