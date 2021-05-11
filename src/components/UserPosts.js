@@ -13,6 +13,8 @@ class UserPosts extends React.Component{
             userEmail : "" ,
             userPhone :"",
             userLocation : "",
+            userContent:"",
+            userTitle:"",
             formSubmitted : false
     
     
@@ -53,6 +55,21 @@ class UserPosts extends React.Component{
      
     }
 
+    handleContentChange = (event)=>{
+        let userContent = event.target.value;
+        this.setState({
+            userContent :userContent
+        })
+     
+    }
+    handleTitleChange = (event)=>{
+        let userTitle = event.target.value;
+        this.setState({
+            userTitle :userTitle
+        })
+     
+    }
+
     resetState = ()=>{
         this.setState({
             
@@ -60,6 +77,7 @@ class UserPosts extends React.Component{
             userEmail : "" ,
            userLocation:"",
            userPhone :"",
+           userContent:"",
             formSubmitted : true
         })
 
@@ -67,7 +85,7 @@ class UserPosts extends React.Component{
             this.setState({
                 formSubmitted:false
             })
-        },5000);
+        },10000);
     }
 
     async submitForm(e) {
@@ -75,18 +93,22 @@ class UserPosts extends React.Component{
         const {  userName ,
                 userEmail  ,
                 userLocation ,
-                userPhone } = this.state;
+                userPhone,
+                userContent,
+                userTitle } = this.state;
         
         try {
 
             await axios ({
                 method : 'POST' ,
-                url : `https://covid-resources-enactus.herokuapp.com/volunteers`,
+                url : `http://localhost:1337/community-posts`,
                 data : {
                     "name":userName ,
+                    "title":userTitle,
                     "email": userEmail,
                     "phone" : userPhone,
-                    "location" :userLocation
+                    "location" :userLocation,
+                    "content" :userContent,
                 }
               });
               
@@ -108,10 +130,12 @@ class UserPosts extends React.Component{
     render(){
         return (
            
+           <div>
+
             <form className= "flex flex-wrap -m-2" >
                 {this.state.formSubmitted && 
                   <p className ="text-green-300">
-                      Thank you for Contacting Us ! We will be reaching out to you soon !
+                      Thank you for posting this resource . Each contribution matters !
                   </p>}
                 <div className="p-2 w-1/2">
                   <div className="relative">
@@ -197,22 +221,39 @@ class UserPosts extends React.Component{
                     />
                   </div>
                 </div> */}
+                 <div className="p-2 w-full">
+                  <div className="relative">
+                    {/* <label htmlFor="message" className="leading-7 text-sm text-gray-600">
+                      Posts
+                    </label> */}
+                    <textarea
+                    value ={this.state.userTitle}
+                     onChange = {this.handleTitleChange}
+                      id="message"
+                      name="message"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-12 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                      placeholder={"Title"}
+                    
+                    ></textarea>
+                  </div>
+                </div>
                 <div className="p-2 w-full">
                   <div className="relative">
                     {/* <label htmlFor="message" className="leading-7 text-sm text-gray-600">
                       Posts
                     </label> */}
                     <textarea
-                    value ={this.state.mailContent}
+                    value ={this.state.userContent}
                      onChange = {this.handleContentChange}
                       id="message"
                       name="message"
                       className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                      placeholder={"Mention the details of the spare items which you would like to share along with your locality."}
+                      placeholder={"I have a spare XXXXX which can be picked up from XXXX free of cost !"}
                     
                     ></textarea>
                   </div>
                 </div>
+               
 
                 <div className="p-2 w-full">
                   <button onClick={(e)=>{this.submitForm(e)}}className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
@@ -222,7 +263,7 @@ class UserPosts extends React.Component{
                 </div>
             </form>
        
-            
+            </div>
 
         );
     }
