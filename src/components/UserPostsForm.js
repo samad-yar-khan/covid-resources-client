@@ -78,6 +78,7 @@ class UserPostsForm extends React.Component{
            userLocation:"",
            userPhone :"",
            userContent:"",
+           userTitle :"",
             formSubmitted : true
         })
 
@@ -98,13 +99,16 @@ class UserPostsForm extends React.Component{
                 userTitle } = this.state;
 
         if(userName === "" || userContent===""){
-          window.prompt("Invalid Details");
           return;
         }
-        
+
+        if(userPhone === ""  && userEmail ===""){
+          return;
+        }
+
         try {
 
-            await axios ({
+          const newPost =  await axios ({
                 method : 'POST' ,
                 url : `http://localhost:1337/community-posts`,
                 data : {
@@ -116,7 +120,7 @@ class UserPostsForm extends React.Component{
                     "content" :userContent,
                 }
               });
-              
+              this.props.addNewPost(newPost.data);
               this.resetState();
 
         } catch (err) {
@@ -125,7 +129,7 @@ class UserPostsForm extends React.Component{
 
         // this.resetState();
 
-        
+       
 
     }
 

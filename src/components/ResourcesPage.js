@@ -176,6 +176,17 @@ class ResourcesPage extends React.Component {
 
     this.updatePostVoteCountInDB(id , finalVotes);
   }
+
+  addNewPost = (post) => {
+    let {userPosts} = this.state;
+
+    userPosts = [post , ...userPosts];
+
+    this.setState({
+      userPosts : userPosts
+    })
+
+  }
   
 
 
@@ -238,7 +249,9 @@ class ResourcesPage extends React.Component {
           //Displaying posts 
           activeResourceIndex === 1 &&
           <div>
-             <UserPostsForm />
+             <UserPostsForm 
+              addNewPost = {this.addNewPost}
+             />
           <div>
             {
                list.map((item)=>{
