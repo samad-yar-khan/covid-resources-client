@@ -2,6 +2,7 @@ import React from 'react'
 import ResourceItem from './ResourceItem'
 import ResourcesNavbar from './ResourcesTab'
 import Footer from './Footer'
+import UserPosts from './UserPosts'
 // import {data} from '../resourceData'
 import axios from 'axios'
 import Loader from './Loader'
@@ -172,8 +173,8 @@ class ResourcesPage extends React.Component {
             We dont have any verfieds leads on this resource !
           </h1>
         } */}
-        {
-  
+        {activeResourceIndex !== 1  &&
+
           list.map((item)=>{
             return <ResourceItem
                     title = {item.title}
@@ -190,6 +191,11 @@ class ResourcesPage extends React.Component {
                     phoneNumbers ={item.phoneNumbers}
                   />
           })
+        }
+
+        {
+          activeResourceIndex === 1 &&
+          <UserPosts />
         }
         </div> 
       
