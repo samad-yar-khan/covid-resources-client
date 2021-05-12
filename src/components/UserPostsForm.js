@@ -157,8 +157,8 @@ class UserPostsForm extends React.Component{
            <div>
 
              <div  className="w-100 flex align-center items-center justify-center flex-col text-sm" >
-              <h3 className={"text-gray-500"}>
-                Share your spare oxygen cylenders , concentrators , medicines etc. with those in need.
+              <h3 className={"text-gray-500 w-full content-center text-center"}>
+                Share your spare oxygen cylinders , concentrators , medicines etc. with those in need.
 
               </h3>
               <div className="p-2 w-full">
