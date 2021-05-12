@@ -61,7 +61,7 @@ class ResourcesPage extends React.Component {
 
       const userPosts = await axios({
         method : 'GET' ,
-        url :"http://localhost:1337/community-posts?_sort=createdAt:desc&_limit=200"
+        url :"https://covid-resources-enactus.herokuapp.com/community-posts?_sort=createdAt:desc&_limit=200"
       })
 
       const allResources = resourcesRes.data;
@@ -148,7 +148,7 @@ class ResourcesPage extends React.Component {
       
       await axios ({
         method : 'PUT' ,
-        url : `http://localhost:1337/community-posts/${id}`,
+        url : `https://covid-resources-enactus.herokuapp.com/community-posts/${id}`,
         data : {
           votes : num
         }
