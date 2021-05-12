@@ -76,7 +76,7 @@ class PostItem extends React.Component {
       })
     }
 
-    this.props.updateVoteCount(id , change)
+    this.props.updatePostVoteCount(id , change)
 
   }
 
