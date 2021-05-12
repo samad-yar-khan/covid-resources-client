@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class UserPostsForm extends React.Component{
@@ -15,6 +16,7 @@ class UserPostsForm extends React.Component{
             userLocation : "",
             userContent:"",
             userTitle:"",
+            expandForm:false,
             formSubmitted : false
     
     
@@ -133,6 +135,19 @@ class UserPostsForm extends React.Component{
 
     }
 
+    toggleForm=()=>{
+      const {expandForm} = this.state;
+      this.setState({
+        expandForm:!expandForm
+      })
+    }
+
+    closeForm=()=>{
+      this.setState({
+        expandForm:false
+      })
+    }
+
 
 
 
@@ -141,7 +156,29 @@ class UserPostsForm extends React.Component{
            
            <div>
 
-            <form className= "flex flex-wrap -m-2" >
+             <div  className="w-100 flex align-center items-center justify-center flex-col text-sm" >
+              <h3 className="text-gray-500">
+                Share your spare oxygen cylenders , concentrators , medicines etc. with those in need.
+
+              </h3>
+              <div className="p-2 w-full">
+                  <button  
+                    className={`flex justify-around mx-auto text-white  border-0 py-2 px-2 focus:outline-none rounded text-sm align-center items-center ${this.state.expandForm ?'bg-red-500 hover:bg-red-600' : ' bg-blue-500 hover:bg-blue-600' }`}
+                    onClick={this.toggleForm}
+                    >
+                    <div className="px-2">
+             
+                      {this.state.expandForm?"Close": "Share Resources"}
+                    </div>     
+                    <div>
+                     <FontAwesomeIcon icon={`${!this.state.expandForm? 'chevron-circle-down' : 'chevron-circle-up'}`} />
+                    </div>
+                  </button >
+
+                </div>
+             </div>
+
+            <form className= {`flex flex-wrap -m-2 mb-6 ${this.state.expandForm ? null : 'h-0 overflow-hidden'}`} >
                 {this.state.formSubmitted && 
                   <p className ="text-green-300">
                       Thank you for posting this resource . Each contribution matters !
@@ -265,8 +302,8 @@ class UserPostsForm extends React.Component{
                
 
                 <div className="p-2 w-full">
-                  <button onClick={(e)=>{this.submitForm(e)}}className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
-                    PUBLISH
+                  <button onClick={(e)=>{this.submitForm(e)}}className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-sm">
+                    Post
 
                   </button>
                 </div>

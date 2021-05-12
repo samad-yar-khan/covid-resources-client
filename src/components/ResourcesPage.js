@@ -8,6 +8,8 @@ import UserPostsForm from './UserPostsForm'
 import axios from 'axios'
 import Loader from './Loader'
 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 class ResourcesPage extends React.Component {
 
   constructor(){
@@ -275,13 +277,26 @@ class ResourcesPage extends React.Component {
             }
           </div>
           
-          <p>hello</p>
+          
           </div>
          
-          
-          
+        }
+
+        {
+          list.length === 0 &&
+
+          <div  className="w-100 flex align-center justify-center items-center">
+            <h1 className='text-gray-400 px-2  text-xl'>
+              No Resources to show !
+            </h1>
+            {/* <div className="text-grey-100 bg-grey-100">
+              <FontAwesomeIcon icon="frown" className="text-grey-100 bg-grey-100" />
+
+            </div> */}
+          </div>
 
         }
+
         </div> 
       
       </div>
