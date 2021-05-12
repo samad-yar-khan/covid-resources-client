@@ -112,7 +112,7 @@ class UserPostsForm extends React.Component{
 
           const newPost =  await axios ({
                 method : 'POST' ,
-                url : `http://localhost:1337/community-posts`,
+                url : `https://covid-resources-enactus.herokuapp.com/community-posts`,
                 data : {
                     "name":userName ,
                     "title":userTitle,
